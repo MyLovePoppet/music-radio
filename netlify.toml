@@ -2,6 +2,13 @@
     functions = "functions"
 # Add from here
 [[redirects]]
-    from = "api/*"
-    to= ".netlify/functions/:splat"
-    status = 200
+  from = "/index.m3u8"
+  to = "/.netlify/functions/music-radio"
+  status = 200
+  force = true
+
+# 保留原有通配符规则（需放在后面）
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
