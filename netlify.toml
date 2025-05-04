@@ -3,9 +3,8 @@
 # Add from here
 [[redirects]]
   from = "/index.m3u8"
-  to = "/.netlify/functions/music-radio"
+  to = "/.netlify/functions/redirect"
   status = 200
-  force = true
 
 # 保留原有通配符规则（需放在后面）
 [[redirects]]
