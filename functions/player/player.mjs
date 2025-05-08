@@ -6,7 +6,7 @@ export default async () => {
 <!DOCTYPE html>
 <html lang="zh_CN">
 <head>
-    <title>纯音频播放器</title>
+    <title>音乐之声在线播放</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <style>
         /* 隐藏视频元素，只保留控制栏 */
