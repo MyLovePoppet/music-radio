@@ -139,9 +139,9 @@ export default async () => {
     // 获取真实音频流地址
     async function getStreamUrl() {
         // 调用另一个云函数端点获取直播地址
-        const response = await fetch('/api/redirect');
+        //const response = await fetch('/api/redirect');
 
-        return response.url;
+        return '/api/redirect';
     }
 
     // 初始化播放器
