@@ -3,26 +3,34 @@ import getMusicUrl from '../util.js';
 
 
 export default async (request, context) => {
-  try {
-    // const url = new URL(request.url)
-    // const subject = url.searchParams.get('name') || 'World'
-    //
-    // return new Response(`Hello ${subject}`)
+    try {
+        // const url = new URL(request.url)
+        // const subject = url.searchParams.get('name') || 'World'
+        //
+        // return new Response(`Hello ${subject}`)
+        // 音乐重定向功能
+        const musicUrl = await getMusicUrl();
+        const url = new URL(request.url)
+        const retStr = url.searchParams.has('str');
+        if (retStr) {
+            return new Response(musicUrl, {
+                status: 200
+            });
+        } else {
+            return new Response(null, {
+                status: 302,
+                headers: {
+                    'Location': musicUrl,
+                    'Cache-Control': 'no-cache',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
+        }
 
 
-    // 音乐重定向功能
-    const musicUrl = await getMusicUrl();
-    return new Response(null, {
-      status: 302,
-      headers: {
-        'Location': musicUrl,
-        'Cache-Control': 'no-cache',
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
-  } catch (error) {
-    return new Response(error.toString(), {
-      status: 500,
-    })
-  }
+    } catch (error) {
+        return new Response(error.toString(), {
+            status: 500,
+        })
+    }
 }

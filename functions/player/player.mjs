@@ -139,10 +139,11 @@ export default async () => {
     // 获取真实音频流地址
     async function getStreamUrl() {
         // 调用另一个云函数端点获取直播地址
-        const response = await fetch('/api/redirect');
+        const response = await fetch('/api/redirect?str=1');
+        const url = await response.text();
         
         //替换HTTP到HTTPS的源
-        return response.url.replace('http://','https://');
+        return url.replace('http://','https://');
     }
 
     // 初始化播放器
