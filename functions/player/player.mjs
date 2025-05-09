@@ -132,7 +132,7 @@ export default async () => {
 
     // 音量滑动事件
     volumeSlider.addEventListener('input', (e) => {
-      player.volume = parseFloat(e.value);
+      player.volume = parseFloat(volumeSlider.value);
     });
     
     
