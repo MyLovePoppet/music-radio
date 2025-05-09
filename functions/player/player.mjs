@@ -7,7 +7,7 @@ export default async () => {
 <html lang="zh_CN">
 <head>
     <title>音乐之声在线播放</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.5.18/hls.js"></script>
     <style>
         /* 隐藏视频元素，只保留控制栏 */
         #audioPlayer {
